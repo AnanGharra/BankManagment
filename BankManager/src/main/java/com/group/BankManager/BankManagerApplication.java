@@ -8,7 +8,7 @@ public class BankManagerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BankManagerApplication.class, args);
-		System.out.println("Hello");
+		System.out.println("ALL GOOD!");
 	}
 
 }

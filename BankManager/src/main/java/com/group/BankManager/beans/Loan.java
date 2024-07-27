@@ -17,6 +17,7 @@ public class Loan {
     private Date startDate;
     private Date endDate;
     private Double monthlyRepayment;
+    private Double remainingAmount;
 
     @ManyToOne
     @JoinColumn(name = "customerID")
@@ -86,4 +87,11 @@ public class Loan {
                 '}';
     }
 
+    public Double getRemainingAmount() {
+        return remainingAmount;
+    }
+
+    public void setRemainingAmount(Double remainingAmount) {
+        this.remainingAmount = remainingAmount;
+    }
 }

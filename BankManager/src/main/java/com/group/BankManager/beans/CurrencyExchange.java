@@ -15,6 +15,7 @@ public class CurrencyExchange {
     private String currencyTo;
     private Double exchangeRate;
     private Date date;
+    private Double amount;
 
     @ManyToOne
     @JoinColumn(name = "accountID")
@@ -28,12 +29,13 @@ public class CurrencyExchange {
     }
 
     // Parameterized CTOR
-    public CurrencyExchange(Account account, Date date, Double exchangeRate, String currencyTo, String currencyFrom) {
+    public CurrencyExchange(Account account, Date date, Double exchangeRate, String currencyTo, String currencyFrom, Double amount) {
         this.account = account;
         this.date = date;
         this.exchangeRate = exchangeRate;
         this.currencyTo = currencyTo;
         this.currencyFrom = currencyFrom;
+        this.amount = amount;
     }
 
     public void setExchangeID(Long exchangeID) {
@@ -82,5 +84,13 @@ public class CurrencyExchange {
 
     public Account getAccount() {
         return account;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
     }
 }
