@@ -41,6 +41,12 @@ public class Account {
         this.customer = customer;
     }
 
+    public Account(long accountID, double balance, Customer customer) {
+        this.accountID = accountID;
+        this.balance = balance;
+        this.customer = customer;
+    }
+
     public Long getAccountID() {
         return accountID;
     }

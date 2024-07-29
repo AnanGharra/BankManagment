@@ -15,6 +15,7 @@ public class LoanBL {
 
     public void grantLoan(Loan loan){
         loanDAO.save(loan);
+        //update balance
     }
 
 
@@ -22,5 +23,6 @@ public class LoanBL {
         Loan existingLoan = loanDAO.findById(loan.getCustomer().getCustomerID()).orElseThrow(() -> new LoanNotFoundException("Loan Not Found!"));
         existingLoan.setRemainingAmount(existingLoan.getRemainingAmount() - existingLoan.getMonthlyRepayment());
         loanDAO.save(existingLoan);
+        //update balance
     }
 }

@@ -40,6 +40,15 @@ public class Customer {
         this.password = password;
     }
 
+    public Customer(long customerID, String firstName, String lastName, String email, String address) {
+        this.customerID = customerID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.email = email;
+
+    }
+
     public Long getCustomerID() {
         return customerID;
     }

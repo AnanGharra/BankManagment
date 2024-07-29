@@ -11,8 +11,8 @@ public class CurrencyExchange {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long exchangeID;
 
-    private String currencyFrom;
-    private String currencyTo;
+    private String fromCurrency;
+    private String toCurrency;
     private Double exchangeRate;
     private Date date;
     private Double amount;
@@ -29,12 +29,12 @@ public class CurrencyExchange {
     }
 
     // Parameterized CTOR
-    public CurrencyExchange(Account account, Date date, Double exchangeRate, String currencyTo, String currencyFrom, Double amount) {
+    public CurrencyExchange(Account account, Date date, Double exchangeRate, String toCurrency, String fromCurrency, Double amount) {
         this.account = account;
         this.date = date;
         this.exchangeRate = exchangeRate;
-        this.currencyTo = currencyTo;
-        this.currencyFrom = currencyFrom;
+        this.toCurrency = toCurrency;
+        this.fromCurrency = fromCurrency;
         this.amount = amount;
     }
 
@@ -42,12 +42,12 @@ public class CurrencyExchange {
         this.exchangeID = exchangeID;
     }
 
-    public void setCurrencyFrom(String currencyFrom) {
-        this.currencyFrom = currencyFrom;
+    public void setCurrencyFrom(String fromCurrency) {
+        this.fromCurrency = fromCurrency;
     }
 
-    public void setCurrencyTo(String currencyTo) {
-        this.currencyTo = currencyTo;
+    public void setCurrencyTo(String toCurrency) {
+        this.toCurrency = toCurrency;
     }
 
     public void setExchangeRate(Double exchangeRate) {
@@ -67,11 +67,11 @@ public class CurrencyExchange {
     }
 
     public String getCurrencyFrom() {
-        return currencyFrom;
+        return fromCurrency;
     }
 
     public String getCurrencyTo() {
-        return currencyTo;
+        return toCurrency;
     }
 
     public Double getExchangeRate() {
